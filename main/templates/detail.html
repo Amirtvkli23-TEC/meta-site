@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ project.title }}{% endblock %}
+
+{% block content %}
+<h1 style="text-align:center; margin:40px 0;">{{ project.title }}</h1>
+
+{% for img in gallery %}
+<img src="{{ img.image.url }}" style="width:100%; max-height:500px; object-fit:cover; display:block; margin-bottom:30px;">
+{% endfor %}
+
+<p style="padding:20px; max-width:800px; margin:auto;">{{ project.description }}</p>
+
+<div style="text-align:center; margin-top:20px;">
+    <a href="/">← Back to Projects</a>
+</div>
+{% endblock %}
